@@ -98,7 +98,7 @@
 // expected maximum server sync signal interval
 #define SERVER_SYNC_INTERVAL 120 /* seconds, 0 to disable */
 // data interval settings
-#define STATIONARY_TIME_TABLE {30, 60, 90} /* seconds */
+#define STATIONARY_TIME_TABLE {30, 60, 360} /* seconds */
 #define DATA_INTERVAL_TABLE {5000, 10000, 15000} /* ms */
 #define PING_BACK_INTERVAL 900 /* seconds */
 
