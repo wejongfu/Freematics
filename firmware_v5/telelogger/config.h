@@ -43,7 +43,7 @@
 #endif
 
 // maximum consecutive OBD access errors before entering standby
-#define MAX_OBD_ERRORS 3
+#define MAX_OBD_ERRORS 20
 
 /**************************************
 * Networking configurations
@@ -55,7 +55,9 @@
 #define WIFI_SSID "SSID"
 #define WIFI_PASSWORD "PASSWORD"
 // cellular network settings
-#define CELL_APN ""
+#define CELL_APN "a1.net"
+#define CELL_USER "ppp@a1plus.at"
+#define CELL_PASSWORD "ppp"
 // Freematics Hub server settings
 #define SERVER_HOST "hub.freematics.com"
 #define SERVER_PROTOCOL PROTOCOL_UDP
@@ -71,7 +73,7 @@
 #if !SERVER_PORT
 #undef SERVER_PORT
 #if SERVER_PROTOCOL == PROTOCOL_UDP
-#define SERVER_PORT 8081
+#define SERVER_PORT 55790
 #elif SERVER_PROTOCOL == PROTOCOL_HTTP
 #define SERVER_PORT 80
 #elif SERVER_PROTOCOL == PROTOCOL_HTTPS
@@ -88,7 +90,7 @@
 #define WIFI_AP_PASSWORD "PASSWORD"
 
 // maximum consecutive communication errors before resetting network
-#define MAX_CONN_ERRORS_RECONNECT 3
+#define MAX_CONN_ERRORS_RECONNECT 10
 // maximum allowed connecting time
 #define MAX_CONN_TIME 10000 /* ms */
 // data receiving timeout
@@ -96,8 +98,8 @@
 // expected maximum server sync signal interval
 #define SERVER_SYNC_INTERVAL 120 /* seconds, 0 to disable */
 // data interval settings
-#define STATIONARY_TIME_TABLE {30, 60, 180} /* seconds */
-#define DATA_INTERVAL_TABLE {1000, 2000, 5000} /* ms */
+#define STATIONARY_TIME_TABLE {30, 60, 90} /* seconds */
+#define DATA_INTERVAL_TABLE {5000, 10000, 15000} /* ms */
 #define PING_BACK_INTERVAL 900 /* seconds */
 
 /**************************************
@@ -124,15 +126,15 @@
 #define GNSS GNSS_EXTERNAL
 #endif
 // keeping GNSS power on during standby 
-#define GNSS_ALWAYS_ON 0
+#define GNSS_ALWAYS_ON 1
 
 /**************************************
 * Standby/wakeup
 **************************************/
 // motion threshold for waking up
-#define MOTION_THRESHOLD 0.4f /* moving vehicle motion threshold in G */
+#define MOTION_THRESHOLD 0.2f /* moving vehicle motion threshold in G */
 // engine jumpstart voltage for waking up (when MEMS unavailable) 
-#define JUMPSTART_VOLTAGE 14 /* V */
+#define JUMPSTART_VOLTAGE 12 /* V */
 // reset device after waking up
 #define RESET_AFTER_WAKEUP 1
 
