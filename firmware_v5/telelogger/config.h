@@ -59,7 +59,7 @@
 #define CELL_USER "ppp@a1plus.at"
 #define CELL_PASSWORD "ppp"
 // Freematics Hub server settings
-#define SERVER_HOST "hub.freematics.com"
+#define SERVER_HOST ""
 #define SERVER_PROTOCOL PROTOCOL_UDP
 #endif 
 
@@ -134,7 +134,8 @@
 // motion threshold for waking up
 #define MOTION_THRESHOLD 0.2f /* moving vehicle motion threshold in G */
 // engine jumpstart voltage for waking up (when MEMS unavailable) 
-#define JUMPSTART_VOLTAGE 12 /* V */
+#define JUMPSTART_VOLTAGE 11.5f /* V */
+#define LOW_BATTERY_VOLTAGE 10.9f /* V */
 // reset device after waking up
 #define RESET_AFTER_WAKEUP 1
 

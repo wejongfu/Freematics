@@ -50,7 +50,13 @@ PID_POLLING_INFO obdData[]= {
   {PID_SPEED, 1},
   {PID_RPM, 1},
   {PID_THROTTLE, 1},
-  {PID_ENGINE_LOAD, 1},
+  {PID_RUNTIME, 1},
+  {PID_COMMANDED_EGR, 1},
+  {PID_FUEL_LEVEL, 1},
+  {PID_AMBIENT_TEMP, 1},
+  {PID_ENGINE_OIL_TEMP, 1},
+  {PID_ENGINE_FUEL_RATE, 1},
+  {PID_ODOMETER, 1},
   {PID_FUEL_PRESSURE, 2},
   {PID_TIMING_ADVANCE, 2},
   {PID_COOLANT_TEMP, 3},
@@ -914,6 +920,14 @@ void telemetry(void* inst)
           Serial.print("Ping...");
           bool success = teleClient.ping();
           Serial.println(success ? "OK" : "NO");
+          #if ENABLE_OBD
+            float bV = obd.getVoltage();
+            if (bV < LOW_BATTERY_VOLTAGE) {
+              if (teleClient.notify(EVENT_LOW_BATTERY, "")) {
+                Serial.println("EVENT_LOW_BATTERY sent");
+              }
+            }
+          #endif
         }
         teleClient.shutdown();
         state.clear(STATE_NET_READY | STATE_NET_CONNECTED);
