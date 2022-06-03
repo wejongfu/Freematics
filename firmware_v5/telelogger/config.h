@@ -98,7 +98,7 @@
 // expected maximum server sync signal interval
 #define SERVER_SYNC_INTERVAL 120 /* seconds, 0 to disable */
 // data interval settings
-#define STATIONARY_TIME_TABLE {30, 60, 360} /* seconds */
+#define STATIONARY_TIME_TABLE {60, 180, 360} /* seconds */
 #define DATA_INTERVAL_TABLE {5000, 10000, 15000} /* ms */
 #define PING_BACK_INTERVAL 900 /* seconds */
 
@@ -147,7 +147,7 @@
 #define PIN_SENSOR1 34
 #define PIN_SENSOR2 26
 
-#define COOLING_DOWN_TEMP 65 /* celsius degrees */
+#define COOLING_DOWN_TEMP 69 /* celsius degrees */
 
 // enable(1)/disable(0) http server
 #define ENABLE_HTTPD 0
