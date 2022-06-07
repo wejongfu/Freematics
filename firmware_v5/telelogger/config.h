@@ -153,6 +153,6 @@
 #define ENABLE_HTTPD 0
 
 // enable(1)/disable(0) BLE SPP server (for Freematics Controller App).
-#define ENABLE_BLE 0
+#define ENABLE_BLE 1
 
 #endif // CONFIG_H_INCLUDED
