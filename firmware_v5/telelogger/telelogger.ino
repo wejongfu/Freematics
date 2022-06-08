@@ -476,7 +476,7 @@ void initialize()
 {
     // turn on buzzer at 2000Hz frequency 
   sys.buzzer(2000);
-  delay(100);
+  delay(500);
   // turn off buzzer
   sys.buzzer(0);
 
